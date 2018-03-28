@@ -8,8 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol Callable
+{
+    func calledFromOtherViewController(text : String);
+}
 
+class ViewController: UIViewController, Callable {
+
+    func calledFromOtherViewController(text : String)
+    {
+        textData.text = text
+    }
+    
     @IBOutlet weak var textData: UITextField!
     
     override func viewDidLoad() {
@@ -29,8 +39,14 @@ class ViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest  = segue.destination as! SecondViewController
+        dest.delegate = self
         dest.textPassedViaSegue = textData.text!
     }
     
+    @IBAction func goBlackPressed(_ sender: Any)
+    {
+        self.view.backgroundColor = UIColor.black
+    }
+    @IBOutlet weak var goBlack: UIButton!
 }
 

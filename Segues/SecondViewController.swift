@@ -10,6 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    // delegate can defined as type ViewController
+    // but this is less flexible, in the case that
+    // this could be returning to multiple possible view controllers
+    var delegate : Callable? = nil
+    
     var textPassedViaSegue : String = ""
     
     @IBOutlet weak var dataLabel: UILabel!
@@ -26,7 +31,13 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func backButtonPressed(_ sender: Any) {
+        delegate!.calledFromOtherViewController(
+            text: "ok, this can be done without ptorocols"
+        )
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

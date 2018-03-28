@@ -33,17 +33,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJg-aA-qKM">
+                                <rect key="frame" x="18" y="598" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GoBlack"/>
+                                <connections>
+                                    <action selector="goBlackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TMa-EL-1PT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.63802872976449199" green="1" blue="0.80321285252332564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="goBlack" destination="lJg-aA-qKM" id="bWd-Bn-z8D"/>
                         <outlet property="textData" destination="4E6-Dw-kWD" id="aLI-dX-trP"/>
                         <segue destination="pVC-Tm-kI3" kind="show" identifier="goToSecondScreen" id="SN2-Pd-7mN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="412" y="34"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Zpa-41-Jbl">
@@ -60,6 +70,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht8-Nf-PPE">
+                                <rect key="frame" x="58" y="407" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="pVC-Tm-kI3" eventType="touchUpInside" id="PEU-GZ-Zlp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79498242507539552" blue="0.65078485211521087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="OCc-IY-O4Y"/>
