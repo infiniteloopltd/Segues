@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textData: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +26,10 @@ class ViewController: UIViewController {
 
     @IBAction func goButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "goToSecondScreen", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest  = segue.destination as! SecondViewController
+        dest.textPassedViaSegue = textData.text!
     }
     
 }

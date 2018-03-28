@@ -10,10 +10,14 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var textPassedViaSegue : String = ""
+    
+    @IBOutlet weak var dataLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Second View Controller Loaded")
-
+        dataLabel.text = textPassedViaSegue
         // Do any additional setup after loading the view.
     }
 
